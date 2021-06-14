@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="TilausDBEntities-Web.config Connection String" description="TilausDBEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.TilausDB.csdl|res://*/Models.TilausDB.ssdl|res://*/Models.TilausDB.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=tilausdbmvcdbserver.database.windows.net;initial catalog=TilausDB;user id=AdminJome;password=Careeria2020!;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\VS2019-TKK\\4\.PV\\TilausDBMVC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TilausDBEntities']/@connectionString" />
+  </parameter>
+</parameters>

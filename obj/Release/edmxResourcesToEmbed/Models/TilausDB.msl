@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TilausDBModelStoreContainer" CdmEntityContainer="TilausDBEntities">
+    <EntitySetMapping Name="Asiakkaat">
+      <EntityTypeMapping TypeName="TilausDBModel.Asiakkaat">
+        <MappingFragment StoreEntitySet="Asiakkaat">
+          <ScalarProperty Name="Postinumero" ColumnName="Postinumero" />
+          <ScalarProperty Name="Osoite" ColumnName="Osoite" />
+          <ScalarProperty Name="Sukunimi" ColumnName="Sukunimi" />
+          <ScalarProperty Name="Etunimi" ColumnName="Etunimi" />
+          <ScalarProperty Name="Nimi" ColumnName="Nimi" />
+          <ScalarProperty Name="PostiID" ColumnName="PostiID" />
+          <ScalarProperty Name="AsiakasID" ColumnName="AsiakasID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Henkilot">
+      <EntityTypeMapping TypeName="TilausDBModel.Henkilot">
+        <MappingFragment StoreEntitySet="Henkilot">
+          <ScalarProperty Name="Sahkoposti" ColumnName="Sahkoposti" />
+          <ScalarProperty Name="Postinumero" ColumnName="Postinumero" />
+          <ScalarProperty Name="Esimies" ColumnName="Esimies" />
+          <ScalarProperty Name="Osoite" ColumnName="Osoite" />
+          <ScalarProperty Name="Sukunimi" ColumnName="Sukunimi" />
+          <ScalarProperty Name="Etunimi" ColumnName="Etunimi" />
+          <ScalarProperty Name="Henkilo_id" ColumnName="Henkilo_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="TilausDBModel.Logins">
+        <MappingFragment StoreEntitySet="Logins">
+          <ScalarProperty Name="LoginErrorMessage" ColumnName="LoginErrorMessage" />
+          <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Postitoimipaikat">
+      <EntityTypeMapping TypeName="TilausDBModel.Postitoimipaikat">
+        <MappingFragment StoreEntitySet="Postitoimipaikat">
+          <ScalarProperty Name="Postitoimipaikka" ColumnName="Postitoimipaikka" />
+          <ScalarProperty Name="Postinumero" ColumnName="Postinumero" />
+          <ScalarProperty Name="PostiID" ColumnName="PostiID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tilaukset">
+      <EntityTypeMapping TypeName="TilausDBModel.Tilaukset">
+        <MappingFragment StoreEntitySet="Tilaukset">
+          <ScalarProperty Name="Postinumero" ColumnName="Postinumero" />
+          <ScalarProperty Name="Toimituspvm" ColumnName="Toimituspvm" />
+          <ScalarProperty Name="Tilauspvm" ColumnName="Tilauspvm" />
+          <ScalarProperty Name="Toimitusosoite" ColumnName="Toimitusosoite" />
+          <ScalarProperty Name="PostiID" ColumnName="PostiID" />
+          <ScalarProperty Name="AsiakasID" ColumnName="AsiakasID" />
+          <ScalarProperty Name="TilausID" ColumnName="TilausID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tilausrivit">
+      <EntityTypeMapping TypeName="TilausDBModel.Tilausrivit">
+        <MappingFragment StoreEntitySet="Tilausrivit">
+          <ScalarProperty Name="Ahinta" ColumnName="Ahinta" />
+          <ScalarProperty Name="Maara" ColumnName="Maara" />
+          <ScalarProperty Name="TuoteID" ColumnName="TuoteID" />
+          <ScalarProperty Name="TilausID" ColumnName="TilausID" />
+          <ScalarProperty Name="TilausriviID" ColumnName="TilausriviID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tuotteet">
+      <EntityTypeMapping TypeName="TilausDBModel.Tuotteet">
+        <MappingFragment StoreEntitySet="Tuotteet">
+          <ScalarProperty Name="Kuva" ColumnName="Kuva" />
+          <ScalarProperty Name="Ahinta" ColumnName="Ahinta" />
+          <ScalarProperty Name="Nimi" ColumnName="Nimi" />
+          <ScalarProperty Name="TuoteID" ColumnName="TuoteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

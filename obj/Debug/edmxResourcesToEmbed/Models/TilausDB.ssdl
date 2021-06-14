@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TilausDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TilausDBModelStoreContainer">
+    <EntitySet Name="Asiakkaat" EntityType="TilausDBModel.Store.Asiakkaat" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Henkilot" EntityType="TilausDBModel.Store.Henkilot" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Logins" EntityType="TilausDBModel.Store.Logins" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Post" EntityType="TilausDBModel.Store.Post" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Postitoimipaikat" EntityType="TilausDBModel.Store.Postitoimipaikat" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Testi" EntityType="TilausDBModel.Store.Testi" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tilaukset" EntityType="TilausDBModel.Store.Tilaukset" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tilausrivit" EntityType="TilausDBModel.Store.Tilausrivit" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tuotteet" EntityType="TilausDBModel.Store.Tuotteet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Asiakkaat_Post" Association="TilausDBModel.Store.FK_Asiakkaat_Post">
+      <End Role="Post" EntitySet="Post" />
+      <End Role="Asiakkaat" EntitySet="Asiakkaat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Asiakkaat_Postitoimipaikat" Association="TilausDBModel.Store.FK_Asiakkaat_Postitoimipaikat">
+      <End Role="Postitoimipaikat" EntitySet="Postitoimipaikat" />
+      <End Role="Asiakkaat" EntitySet="Asiakkaat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tilaukset_Asiakkaat" Association="TilausDBModel.Store.FK_Tilaukset_Asiakkaat">
+      <End Role="Asiakkaat" EntitySet="Asiakkaat" />
+      <End Role="Tilaukset" EntitySet="Tilaukset" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tilaukset_Postitoimipaikat" Association="TilausDBModel.Store.FK_Tilaukset_Postitoimipaikat">
+      <End Role="Postitoimipaikat" EntitySet="Postitoimipaikat" />
+      <End Role="Tilaukset" EntitySet="Tilaukset" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tilausrivit_Tilaukset" Association="TilausDBModel.Store.FK_Tilausrivit_Tilaukset">
+      <End Role="Tilaukset" EntitySet="Tilaukset" />
+      <End Role="Tilausrivit" EntitySet="Tilausrivit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tilausrivit_Tuotteet" Association="TilausDBModel.Store.FK_Tilausrivit_Tuotteet">
+      <End Role="Tuotteet" EntitySet="Tuotteet" />
+      <End Role="Tilausrivit" EntitySet="Tilausrivit" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Asiakkaat">
+    <Key>
+      <PropertyRef Name="AsiakasID" />
+    </Key>
+    <Property Name="AsiakasID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PostiID" Type="int" Nullable="true" />
+    <Property Name="Nimi" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Etunimi" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Sukunimi" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Osoite" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Postinumero" Type="nchar" Nullable="true" MaxLength="5" />
+    <Property Name="Postnro" Type="nchar" Nullable="true" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="Henkilot">
+    <Key>
+      <PropertyRef Name="Henkilo_id" />
+    </Key>
+    <Property Name="Henkilo_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Etunimi" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Sukunimi" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Osoite" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="Esimies" Type="int" Nullable="true" />
+    <Property Name="Postinumero" Type="nchar" Nullable="true" MaxLength="5" />
+    <Property Name="Sahkoposti" Type="nvarchar" Nullable="true" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Logins">
+    <Key>
+      <PropertyRef Name="LoginID" />
+    </Key>
+    <Property Name="LoginID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="PassWord" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="LoginErrorMessage" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="Postnro" />
+    </Key>
+    <Property Name="Postnro" Type="nchar" Nullable="false" MaxLength="5" />
+    <Property Name="Postplace" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Postitoimipaikat">
+    <Key>
+      <PropertyRef Name="PostiID" />
+    </Key>
+    <Property Name="PostiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Postinumero" Type="nchar" Nullable="true" MaxLength="5" />
+    <Property Name="Postitoimipaikka" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Testi">
+    <Key>
+      <PropertyRef Name="TestiId" />
+    </Key>
+    <Property Name="TestiId" Type="int" Nullable="false" />
+    <Property Name="Nimi" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Jotain" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tilaukset">
+    <Key>
+      <PropertyRef Name="TilausID" />
+    </Key>
+    <Property Name="TilausID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AsiakasID" Type="int" Nullable="true" />
+    <Property Name="PostiID" Type="int" Nullable="true" />
+    <Property Name="Toimitusosoite" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Tilauspvm" Type="datetime" Nullable="true" />
+    <Property Name="Toimituspvm" Type="datetime" Nullable="true" />
+    <Property Name="Postinumero" Type="nchar" Nullable="true" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="Tilausrivit">
+    <Key>
+      <PropertyRef Name="TilausriviID" />
+    </Key>
+    <Property Name="TilausriviID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TilausID" Type="int" Nullable="true" />
+    <Property Name="TuoteID" Type="int" Nullable="true" />
+    <Property Name="Maara" Type="int" Nullable="true" />
+    <Property Name="Ahinta" Type="decimal" Nullable="true" Precision="5" Scale="2" />
+  </EntityType>
+  <EntityType Name="Tuotteet">
+    <Key>
+      <PropertyRef Name="TuoteID" />
+    </Key>
+    <Property Name="TuoteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nimi" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Ahinta" Type="decimal" Nullable="true" Precision="5" Scale="2" />
+    <Property Name="Kuva" Type="nvarchar" Nullable="true" MaxLength="200" />
+  </EntityType>
+  <Association Name="FK_Asiakkaat_Post">
+    <End Role="Post" Type="TilausDBModel.Store.Post" Multiplicity="0..1" />
+    <End Role="Asiakkaat" Type="TilausDBModel.Store.Asiakkaat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="Postnro" />
+      </Principal>
+      <Dependent Role="Asiakkaat">
+        <PropertyRef Name="Postnro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Asiakkaat_Postitoimipaikat">
+    <End Role="Postitoimipaikat" Type="TilausDBModel.Store.Postitoimipaikat" Multiplicity="0..1" />
+    <End Role="Asiakkaat" Type="TilausDBModel.Store.Asiakkaat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Postitoimipaikat">
+        <PropertyRef Name="PostiID" />
+      </Principal>
+      <Dependent Role="Asiakkaat">
+        <PropertyRef Name="PostiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tilaukset_Asiakkaat">
+    <End Role="Asiakkaat" Type="TilausDBModel.Store.Asiakkaat" Multiplicity="0..1" />
+    <End Role="Tilaukset" Type="TilausDBModel.Store.Tilaukset" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Asiakkaat">
+        <PropertyRef Name="AsiakasID" />
+      </Principal>
+      <Dependent Role="Tilaukset">
+        <PropertyRef Name="AsiakasID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tilaukset_Postitoimipaikat">
+    <End Role="Postitoimipaikat" Type="TilausDBModel.Store.Postitoimipaikat" Multiplicity="0..1" />
+    <End Role="Tilaukset" Type="TilausDBModel.Store.Tilaukset" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Postitoimipaikat">
+        <PropertyRef Name="PostiID" />
+      </Principal>
+      <Dependent Role="Tilaukset">
+        <PropertyRef Name="PostiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tilausrivit_Tilaukset">
+    <End Role="Tilaukset" Type="TilausDBModel.Store.Tilaukset" Multiplicity="0..1" />
+    <End Role="Tilausrivit" Type="TilausDBModel.Store.Tilausrivit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tilaukset">
+        <PropertyRef Name="TilausID" />
+      </Principal>
+      <Dependent Role="Tilausrivit">
+        <PropertyRef Name="TilausID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tilausrivit_Tuotteet">
+    <End Role="Tuotteet" Type="TilausDBModel.Store.Tuotteet" Multiplicity="0..1" />
+    <End Role="Tilausrivit" Type="TilausDBModel.Store.Tilausrivit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tuotteet">
+        <PropertyRef Name="TuoteID" />
+      </Principal>
+      <Dependent Role="Tilausrivit">
+        <PropertyRef Name="TuoteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

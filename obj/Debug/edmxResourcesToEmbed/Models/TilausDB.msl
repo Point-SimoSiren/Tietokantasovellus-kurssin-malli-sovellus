@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TilausDBModelStoreContainer" CdmEntityContainer="TilausDBEntities">
+    <EntitySetMapping Name="Asiakkaat">
+      <EntityTypeMapping TypeName="IsTypeOf(TilausDBModel.Asiakkaat)">
+        <MappingFragment StoreEntitySet="Asiakkaat">
+          <ScalarProperty Name="AsiakasID" ColumnName="AsiakasID" />
+          <ScalarProperty Name="PostiID" ColumnName="PostiID" />
+          <ScalarProperty Name="Nimi" ColumnName="Nimi" />
+          <ScalarProperty Name="Etunimi" ColumnName="Etunimi" />
+          <ScalarProperty Name="Sukunimi" ColumnName="Sukunimi" />
+          <ScalarProperty Name="Osoite" ColumnName="Osoite" />
+          <ScalarProperty Name="Postinumero" ColumnName="Postinumero" />
+          <ScalarProperty Name="Postnro" ColumnName="Postnro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Henkilot">
+      <EntityTypeMapping TypeName="IsTypeOf(TilausDBModel.Henkilot)">
+        <MappingFragment StoreEntitySet="Henkilot">
+          <ScalarProperty Name="Henkilo_id" ColumnName="Henkilo_id" />
+          <ScalarProperty Name="Etunimi" ColumnName="Etunimi" />
+          <ScalarProperty Name="Sukunimi" ColumnName="Sukunimi" />
+          <ScalarProperty Name="Osoite" ColumnName="Osoite" />
+          <ScalarProperty Name="Esimies" ColumnName="Esimies" />
+          <ScalarProperty Name="Postinumero" ColumnName="Postinumero" />
+          <ScalarProperty Name="Sahkoposti" ColumnName="Sahkoposti" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="IsTypeOf(TilausDBModel.Logins)">
+        <MappingFragment StoreEntitySet="Logins">
+          <ScalarProperty Name="LoginID" ColumnName="LoginID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+          <ScalarProperty Name="LoginErrorMessage" ColumnName="LoginErrorMessage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Post">
+      <EntityTypeMapping TypeName="IsTypeOf(TilausDBModel.Post)">
+        <MappingFragment StoreEntitySet="Post">
+          <ScalarProperty Name="Postnro" ColumnName="Postnro" />
+          <ScalarProperty Name="Postplace" ColumnName="Postplace" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Postitoimipaikat">
+      <EntityTypeMapping TypeName="IsTypeOf(TilausDBModel.Postitoimipaikat)">
+        <MappingFragment StoreEntitySet="Postitoimipaikat">
+          <ScalarProperty Name="PostiID" ColumnName="PostiID" />
+          <ScalarProperty Name="Postinumero" ColumnName="Postinumero" />
+          <ScalarProperty Name="Postitoimipaikka" ColumnName="Postitoimipaikka" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Testi">
+      <EntityTypeMapping TypeName="IsTypeOf(TilausDBModel.Testi)">
+        <MappingFragment StoreEntitySet="Testi">
+          <ScalarProperty Name="TestiId" ColumnName="TestiId" />
+          <ScalarProperty Name="Nimi" ColumnName="Nimi" />
+          <ScalarProperty Name="Jotain" ColumnName="Jotain" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tilaukset">
+      <EntityTypeMapping TypeName="IsTypeOf(TilausDBModel.Tilaukset)">
+        <MappingFragment StoreEntitySet="Tilaukset">
+          <ScalarProperty Name="TilausID" ColumnName="TilausID" />
+          <ScalarProperty Name="AsiakasID" ColumnName="AsiakasID" />
+          <ScalarProperty Name="PostiID" ColumnName="PostiID" />
+          <ScalarProperty Name="Toimitusosoite" ColumnName="Toimitusosoite" />
+          <ScalarProperty Name="Tilauspvm" ColumnName="Tilauspvm" />
+          <ScalarProperty Name="Toimituspvm" ColumnName="Toimituspvm" />
+          <ScalarProperty Name="Postinumero" ColumnName="Postinumero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tilausrivit">
+      <EntityTypeMapping TypeName="IsTypeOf(TilausDBModel.Tilausrivit)">
+        <MappingFragment StoreEntitySet="Tilausrivit">
+          <ScalarProperty Name="TilausriviID" ColumnName="TilausriviID" />
+          <ScalarProperty Name="TilausID" ColumnName="TilausID" />
+          <ScalarProperty Name="TuoteID" ColumnName="TuoteID" />
+          <ScalarProperty Name="Maara" ColumnName="Maara" />
+          <ScalarProperty Name="Ahinta" ColumnName="Ahinta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tuotteet">
+      <EntityTypeMapping TypeName="IsTypeOf(TilausDBModel.Tuotteet)">
+        <MappingFragment StoreEntitySet="Tuotteet">
+          <ScalarProperty Name="TuoteID" ColumnName="TuoteID" />
+          <ScalarProperty Name="Nimi" ColumnName="Nimi" />
+          <ScalarProperty Name="Ahinta" ColumnName="Ahinta" />
+          <ScalarProperty Name="Kuva" ColumnName="Kuva" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

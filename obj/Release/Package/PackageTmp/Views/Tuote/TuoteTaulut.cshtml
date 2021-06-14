@@ -1,0 +1,55 @@
+﻿@model IEnumerable<TilausDBMVC.Models.Tuotteet>
+
+@{
+    ViewBag.Title = "TuoteTaulut";
+}
+
+
+
+@section scripts {
+    <script type="text/javascript">
+
+        $("#poistaTuote").click(function () {
+            var productId = $(this).data("tuoteid");
+            alert(productId);
+        });
+
+        $(".showProductId").click(function () {
+            var productId = $(this).data("tuoteid");
+            alert(productId);
+        });
+    </script>
+}
+
+<div class="row">
+    @foreach (TilausDBMVC.Models.Tuotteet tuote in Model)
+    {
+        <div class="col-lg-3">
+            <div class="card mb-3">
+                <h3 class="card-header">@tuote.Nimi</h3>
+                <div class="card-body">
+                    <h5 class="card-title">@tuote.Ahinta</h5>
+                    @*<h6 class="card-subtitle text-muted">@tuote.#</h6>*@
+                </div>
+                <img style="height: 200px;max-width: 100%; display: block;" src="@tuote.Kuva" alt="@tuote.Kuva">
+                @*<ul class="list-group list-group-flush">
+                    <li class="list-group-item">@tuote.UnitPrice</li>
+                    <li class="list-group-item">@tuote.UnitsOnOrder</li>
+                    <li class="list-group-item">@tuoe.ReorderLevel</li>
+                </ul>*@
+                <div class="card-body">
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+
+<script>
+    function naytaValittuTuote(tuoteID) {
+        alert(tuoteID);
+    }
+</script>
